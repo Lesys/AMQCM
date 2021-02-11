@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">ProjetEmbarque</string>
+    <string name="app_name">AMQCM</string>
+
+    <!-- Texte des boutons -->
+    <string name="createRoom">Créer salon</string>
+    <string name="joinRoom">Rejoindre salon</string>
+    <string name="profile">Profil</string>
 </resources>
