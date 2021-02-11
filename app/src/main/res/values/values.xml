@@ -1,0 +1,22 @@
+<resources>
+    <!-- Default values -->
+    <string-array name="default_numberMaxPlayer">
+        <item>4</item>
+        <item>8</item>
+        <item>12</item>
+    </string-array>
+    <string-array name="default_numberMusics">
+        <item>10</item>
+        <item>15</item>
+        <item>20</item>
+        <item>25</item>
+        <item>30</item>
+    </string-array>
+    <string-array name="default_responseTime">
+        <item>10</item>
+        <item>15</item>
+        <item>20</item>
+        <item>25</item>
+        <item>30</item>
+    </string-array>
+</resources>
