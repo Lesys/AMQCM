@@ -62,14 +62,11 @@
                     android:text="@string/numberMusic"
                     android:textAlignment="center" />
 
-                <EditText
+                <Spinner
                     android:id="@+id/room_numberMusic"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:inputType="number"
-                    tools:layout_conversion_absoluteHeight="45dp"
-                    tools:layout_conversion_absoluteWidth="210dp" />
+                    android:entries="@array/default_numberMusics" />
 
                 <TextView
                     android:id="@+id/textView8"
@@ -80,12 +77,11 @@
                     tools:layout_conversion_absoluteHeight="19dp"
                     tools:layout_conversion_absoluteWidth="178dp" />
 
-                <EditText
+                <Spinner
                     android:id="@+id/room_numberMaxPlayer"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:inputType="number" />
+                    android:entries="@array/default_numberMaxPlayer" />
 
                 <TextView
                     android:id="@+id/textView10"
@@ -94,12 +90,11 @@
                     android:text="@string/responseTime"
                     android:textAlignment="center" />
 
-                <EditText
+                <Spinner
                     android:id="@+id/room_responseTime"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:inputType="number" />
+                    android:entries="@array/default_responseTime" />
 
                 <TextView
                     android:id="@+id/textView11"
@@ -111,11 +106,12 @@
                 <Spinner
                     android:id="@+id/room_reponseType"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:entries="@array/array_responseType" />
 
                 <Space
                     android:layout_width="match_parent"
-                    android:layout_height="425dp" />
+                    android:layout_height="53dp" />
 
                 <Button
                     android:id="@+id/room_buttonLaunchGame"

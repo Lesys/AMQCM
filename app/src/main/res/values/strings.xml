@@ -17,20 +17,23 @@
     <!-- Errors -->
 
     <!-- Spinner contents -->
+    <!--  <string-array name="array_responseType">
+         <item>
+             <name>Nom de l\'animé</name>
+             <value>anime</value>
+         </item>
+         <item>
+             <name>Nom de la chanson</name>
+             <value>song</value>
+         </item>
+         <item>
+             <name>Nom du groupe</name>
+             <value>group</value>
+         </item>
+     </string-array>-->
     <string-array name="array_responseType">
-        <item>
-            <name>Nom de l'animé</name>
-            <value>anime</value>
-        </item>
-        <item>
-            <name>Nom de la chanson</name>
-            <value>song</value>
-        </item>
-        <item>
-            <name>Nom du groupe</name>
-            <value>group</value>
-        </item>
+        <item>Anime</item>
+        <item>Titre</item>
+        <item>Groupe</item>
     </string-array>
-
-
 </resources>
