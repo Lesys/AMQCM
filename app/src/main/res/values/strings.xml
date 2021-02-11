@@ -5,6 +5,7 @@
     <string name="createRoom">Créer salon</string>
     <string name="joinRoom">Rejoindre salon</string>
     <string name="profile">Profil</string>
+    <string name="connect">Se connecter</string>
 
     <!-- Errors -->
 
