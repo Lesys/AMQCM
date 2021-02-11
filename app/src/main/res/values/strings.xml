@@ -5,6 +5,8 @@
     <string name="createRoom">Créer salon</string>
     <string name="joinRoom">Rejoindre salon</string>
     <string name="profile">Profil</string>
+    <string name="connect">Se connecter</string>
+
     <string name="roomNumber">Numéro de la salle: </string>
     <string name="buttonLaunchGame">Lancer la partie</string>
     <string name="numberMaxPlayer">Nombre de joueur maximum</string>

@@ -7,35 +7,37 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/profile"
+        android:id="@+id/main_profile"
         android:layout_width="279dp"
         android:layout_height="79dp"
         android:layout_marginStart="67dp"
         android:layout_marginTop="28dp"
         android:layout_marginEnd="66dp"
         android:layout_marginBottom="230dp"
+        android:onClick="onClickProfile"
         android:text="@string/profile"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/joinRoom" />
+        app:layout_constraintTop_toBottomOf="@+id/main_joinRoom" />
 
     <Button
-        android:id="@+id/createRoom"
+        android:id="@+id/main_createRoom"
         android:layout_width="279dp"
         android:layout_height="79dp"
         android:layout_marginStart="67dp"
         android:layout_marginTop="198dp"
         android:layout_marginEnd="66dp"
         android:layout_marginBottom="28dp"
+        android:onClick="onClickRoom"
         android:text="@string/createRoom"
-        app:layout_constraintBottom_toTopOf="@+id/joinRoom"
+        app:layout_constraintBottom_toTopOf="@+id/main_joinRoom"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/joinRoom"
+        android:id="@+id/main_joinRoom"
         android:layout_width="279dp"
         android:layout_height="79dp"
         android:layout_marginStart="67dp"
@@ -43,9 +45,24 @@
         android:layout_marginEnd="66dp"
         android:layout_marginBottom="38dp"
         android:text="@string/joinRoom"
-        app:layout_constraintBottom_toTopOf="@+id/profile"
+        app:layout_constraintBottom_toTopOf="@+id/main_profile"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/createRoom" />
+        app:layout_constraintTop_toBottomOf="@+id/main_createRoom" />
+
+    <Button
+        android:id="@+id/main_connect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="268dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="101dp"
+        android:onClick="onClickConnect"
+        android:text="@string/connect"
+        app:layout_constraintBottom_toTopOf="@+id/main_createRoom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
