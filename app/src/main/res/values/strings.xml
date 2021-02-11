@@ -1,8 +1,11 @@
 <resources>
     <string name="app_name">AMQCM</string>
 
-    <!-- Texte des boutons -->
+    <!-- Buttons text -->
     <string name="createRoom">Créer salon</string>
     <string name="joinRoom">Rejoindre salon</string>
     <string name="profile">Profil</string>
+
+    <!-- Errors -->
+
 </resources>
