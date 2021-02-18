@@ -39,16 +39,10 @@
             android:layout_height="match_parent"
             android:orientation="horizontal">
 
-            <ScrollView
+            <ListView
+                android:id="@+id/room_playerList"
                 android:layout_width="120dp"
-                android:layout_height="match_parent">
-
-                <LinearLayout
-                    android:id="@+id/room_nameList"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical" />
-            </ScrollView>
+                android:layout_height="match_parent"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -65,7 +59,7 @@
                 <Spinner
                     android:id="@+id/room_numberMusic"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="60dp"
                     android:entries="@array/default_numberMusics" />
 
                 <TextView
@@ -80,7 +74,7 @@
                 <Spinner
                     android:id="@+id/room_numberMaxPlayer"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="60dp"
                     android:entries="@array/default_numberMaxPlayer" />
 
                 <TextView
@@ -93,7 +87,7 @@
                 <Spinner
                     android:id="@+id/room_responseTime"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="60dp"
                     android:entries="@array/default_responseTime" />
 
                 <TextView
@@ -106,7 +100,7 @@
                 <Spinner
                     android:id="@+id/room_reponseType"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="60dp"
                     android:entries="@array/array_responseType" />
 
                 <Space
@@ -117,6 +111,7 @@
                     android:id="@+id/room_buttonLaunchGame"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:onClick="onClickUpdatePlayerList"
                     android:text="@string/buttonLaunchGame" />
             </LinearLayout>
 
