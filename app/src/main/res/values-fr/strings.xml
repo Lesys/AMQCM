@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">AMQCM</string>
+
+    <!-- Buttons, Labels & Hint text -->
+    <string name="createRoom">Créer salon</string>
+    <string name="joinRoom">Rejoindre salon</string>
+    <string name="profile">Profil</string>
+    <string name="connect">Se connecter</string>
+    <string name="login">Login</string>
+    <string name="password">Mot de passe</string>
+
+    <string name="roomNumber">Numéro de la salle: </string>
+    <string name="buttonLaunchGame">Lancer la partie</string>
+    <string name="numberMaxPlayer">Nombre de joueur maximum</string>
+    <string name="numberMusic">Nombre de musiques</string>
+    <string name="responseTime">Temps de réponse (en secondes)</string>
+    <string name="responseType">Type de réponse</string>
+
+    <!-- Errors -->
+
+    <!-- Spinner contents -->
+    <string-array name="array_responseType">
+        <item>Animé</item>
+        <item>Titre</item>
+        <item>Groupe</item>
+    </string-array>
+</resources>
