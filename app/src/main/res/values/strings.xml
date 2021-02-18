@@ -6,6 +6,8 @@
     <string name="joinRoom">Rejoindre salon</string>
     <string name="profile">Profil</string>
     <string name="connect">Se connecter</string>
+    <string name="login">Login</string>
+    <string name="password">Mot de passe</string>
 
     <string name="roomNumber">Numéro de la salle: </string>
     <string name="buttonLaunchGame">Lancer la partie</string>
