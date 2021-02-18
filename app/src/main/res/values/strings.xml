@@ -2,40 +2,26 @@
     <string name="app_name">AMQCM</string>
 
     <!-- Buttons, Labels & Hint text -->
-    <string name="createRoom">Créer salon</string>
-    <string name="joinRoom">Rejoindre salon</string>
-    <string name="profile">Profil</string>
-    <string name="connect">Se connecter</string>
+    <string name="createRoom">Create room</string>
+    <string name="joinRoom">Join room</string>
+    <string name="profile">Profile</string>
+    <string name="connect">Sign in</string>
     <string name="login">Login</string>
-    <string name="password">Mot de passe</string>
+    <string name="password">Password</string>
 
-    <string name="roomNumber">Numéro de la salle: </string>
-    <string name="buttonLaunchGame">Lancer la partie</string>
-    <string name="numberMaxPlayer">Nombre de joueur maximum</string>
-    <string name="numberMusic">Nombre de musiques</string>
-    <string name="responseTime">Temps de réponse (en secondes)</string>
-    <string name="responseType">Type de réponse</string>
+    <string name="roomNumber">Room n° : </string>
+    <string name="buttonLaunchGame">Launch the game</string>
+    <string name="numberMaxPlayer">Maximum number of players</string>
+    <string name="numberMusic">Number of musics</string>
+    <string name="responseTime">Response time</string>
+    <string name="responseType">Response type</string>
 
     <!-- Errors -->
 
     <!-- Spinner contents -->
-    <!--  <string-array name="array_responseType">
-         <item>
-             <name>Nom de l\'animé</name>
-             <value>anime</value>
-         </item>
-         <item>
-             <name>Nom de la chanson</name>
-             <value>song</value>
-         </item>
-         <item>
-             <name>Nom du groupe</name>
-             <value>group</value>
-         </item>
-     </string-array>-->
     <string-array name="array_responseType">
         <item>Anime</item>
-        <item>Titre</item>
-        <item>Groupe</item>
+        <item>Title</item>
+        <item>Band</item>
     </string-array>
 </resources>
