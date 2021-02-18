@@ -8,6 +8,7 @@
     <string name="connect">Se connecter</string>
     <string name="login">Login</string>
     <string name="password">Mot de passe</string>
+    <string name="roomID">Id de la salle</string>
 
     <string name="roomNumber">Numéro de la salle: </string>
     <string name="buttonLaunchGame">Lancer la partie</string>
@@ -15,6 +16,9 @@
     <string name="numberMusic">Nombre de musiques</string>
     <string name="responseTime">Temps de réponse (en secondes)</string>
     <string name="responseType">Type de réponse</string>
+
+    <!-- Text pop-up -->
+    <string name="popupJoin">Entrez les informations de la salle à rejoindre</string>
 
     <!-- Errors -->
 

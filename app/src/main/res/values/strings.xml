@@ -8,6 +8,7 @@
     <string name="connect">Sign in</string>
     <string name="login">Login</string>
     <string name="password">Password</string>
+    <string name="roomID">Room\'s Id</string>
 
     <string name="roomNumber">Room n° : </string>
     <string name="buttonLaunchGame">Launch the game</string>
@@ -16,6 +17,12 @@
     <string name="responseTime">Response time</string>
     <string name="responseType">Response type</string>
 
+    <!-- Text pop-up -->
+    <string name="popupJoin">Enter the informations about the room to join</string>
+
+    <!-- Errors -->
+
+    <!-- Spinner contents -->
     <string-array name="array_responseType">
         <item>Anime</item>
         <item>Title</item>
