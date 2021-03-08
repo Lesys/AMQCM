@@ -43,9 +43,11 @@ public class RoomActivity extends AppCompatActivity {
         SharedPreferences playerList = getSharedPreferences("PLAYER_LIST", MODE_PRIVATE);
         SharedPreferences.Editor playerListEditor = playerList.edit();
 
-        Set<String> list = playerList.getStringSet("list", null);
+        Set<String> list = playerList.getStringSet("list", new HashSet<String>());
+
         //list.addAll(playerList.getStringSet("list", null));
         list.add(playerName);
+
         /*System.out.println(list.toArray());*/
         playerListEditor.putStringSet("list", list);
         playerListEditor.commit();
@@ -71,8 +73,9 @@ public class RoomActivity extends AppCompatActivity {
 
     public void onClickUpdatePlayerList(View view) { // TODO: changer le onClick par un observer
         SharedPreferences playerList = getSharedPreferences("PLAYER_LIST", MODE_PRIVATE);
-        Set<String> list2 = playerList.getStringSet("list", null);
+        Set<String> list2 = playerList.getStringSet("list", new HashSet<String>());
         ArrayList<String> list = new ArrayList<>();
+
         for (String name : list2) {
             list.add(name);
         }
