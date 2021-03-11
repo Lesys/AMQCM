@@ -2,6 +2,7 @@ package com.example.projetembarque;
 
 public class Player {
     private String login;
+    private String loginMAL;
     private int score;
 
     public Player(String login) {
@@ -14,6 +15,10 @@ public class Player {
      */
     public void giveAnswer(int id) { //TODO : send the selected id to the response
 
+    }
+
+    public String getLoginMAL() {
+        return loginMAL;
     }
 
     /**
