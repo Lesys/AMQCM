@@ -1,4 +1,4 @@
-package com.example.projetembarque;
+    package com.example.projetembarque;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,14 +11,19 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 
-public class MainActivity extends AppCompatActivity {
+import org.json.JSONException;
+
+    public class MainActivity extends AppCompatActivity {
 
     //TODO : Condition pour afficher soit le bouton de connexion, soit le bouton de profil
+
+    public Object obj;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        this.obj = new Object();
     }
 
     public void onClickConnect(View view) {
