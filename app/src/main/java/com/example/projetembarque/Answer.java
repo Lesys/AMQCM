@@ -8,4 +8,16 @@ public class Answer {
     public Answer() {
         // TODO : remplir les variables ?
     }
+
+    public String getAnime() {
+        return this.anime;
+    }
+
+    public String getBand() {
+        return this.band;
+    }
+
+    public String getTitle() {
+        return this.title;
+    }
 }

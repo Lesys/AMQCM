@@ -8,7 +8,5 @@ public abstract class ResponseType {
         super();
     }
 
-    public Answer getResponse(Response rep) {
-        return new Answer(); // TODO
-    }
+    public abstract String getResponse(Answer answer);
 }
