@@ -2,13 +2,12 @@ package com.example.projetembarque;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.content.SharedPreferences;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -20,10 +19,7 @@ public class RoomActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_room);
-        addPlayer("Snalts");
-        addPlayer("Lesys");
-        addPlayer("Yann");
-        addPlayer("Logic");
+        this.test();
         //fillSpinerResponseType();
     }
 
@@ -71,6 +67,11 @@ public class RoomActivity extends AppCompatActivity {
         }
     }
 
+    public void onClickGame(View view) {
+        Intent gameIndent = new Intent(getApplicationContext(), GameActivity.class);
+        startActivityForResult(gameIndent, 1);
+    }
+
     public void onClickUpdatePlayerList(View view) { // TODO: changer le onClick par un observer
         SharedPreferences playerList = getSharedPreferences("PLAYER_LIST", MODE_PRIVATE);
         Set<String> list2 = playerList.getStringSet("list", new HashSet<String>());
@@ -90,5 +91,20 @@ public class RoomActivity extends AppCompatActivity {
         ListView playerListView = (ListView) findViewById(R.id.room_playerList);
         playerListView.setAdapter(adapter);
         this.removePlayer("Alexis");
+    }
+
+    private void test() {
+        addPlayer("Snalts");
+        addPlayer("Lesys");
+        addPlayer("Yann");
+        addPlayer("Logic");
+        addPlayer("Snalts1");
+        addPlayer("Lesys1");
+        addPlayer("Yann1");
+        addPlayer("Logic1");
+        addPlayer("Snalts2");
+        addPlayer("Lesys2");
+        addPlayer("Yann2");
+        addPlayer("Logic2");
     }
 }

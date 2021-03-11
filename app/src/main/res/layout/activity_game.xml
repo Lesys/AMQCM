@@ -33,15 +33,17 @@
                 android:text="@string/roomNumber"
                 android:textAlignment="textEnd" />
 
-            <ListView
-                android:id="@+id/game_playerList"
-                android:layout_width="120dp"
-                android:layout_height="match_parent" />
         </LinearLayout>
 
         <TableRow
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_width="match_parent"
+            android:layout_height="265dp">
+
+            <ListView
+                android:id="@+id/game_playerList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </TableRow>
 
         <TableLayout
             android:layout_width="match_parent"
@@ -51,22 +53,30 @@
             <com.example.projetembarque.ButtonResponse
                 android:id="@+id/game_buttonResponse1"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:onClick="onClickButtonResponse"
+                android:textAllCaps="false" />
 
             <com.example.projetembarque.ButtonResponse
                 android:id="@+id/game_buttonResponse2"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:onClick="onClickButtonResponse"
+                android:textAllCaps="false" />
 
             <com.example.projetembarque.ButtonResponse
                 android:id="@+id/game_buttonResponse3"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:onClick="onClickButtonResponse"
+                android:textAllCaps="false" />
 
             <com.example.projetembarque.ButtonResponse
                 android:id="@+id/game_buttonResponse4"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:onClick="onClickButtonResponse"
+                android:textAllCaps="false" />
 
         </TableLayout>
 

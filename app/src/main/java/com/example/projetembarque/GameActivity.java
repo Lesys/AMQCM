@@ -1,12 +1,12 @@
 package com.example.projetembarque;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -14,34 +14,21 @@ import java.util.List;
 import java.util.Set;
 
 public class GameActivity extends AppCompatActivity {
-
     private ResponseType responseType;
+    private Response response;
     private List<ButtonResponse> buttons;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
-        this.buttons = new ArrayList<ButtonResponse>();
+        this.buttons = new ArrayList<>();
         this.buttons.add(findViewById(R.id.game_buttonResponse1));
         this.buttons.add(findViewById(R.id.game_buttonResponse2));
         this.buttons.add(findViewById(R.id.game_buttonResponse3));
         this.buttons.add(findViewById(R.id.game_buttonResponse4));
-        //fillSpinerResponseType();
+        this.test();
     }
-
-/*
-    public void fillSpinerResponseType() {
-        Spinner spinner = (Spinner) findViewById(R.id.room_reponseType);
-        // Create an ArrayAdapter using the string array and a default spinner layout
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.array_responseType, android.R.layout.simple_spinner_item);
-        // Specify the layout to use when the list of choices appears
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        // Apply the adapter to the spinner
-        spinner.setAdapter(adapter);
-
-    }*/
-
 
     public void updateButtons(Response response) {
         // TODO Update the 4 response buttons with the new answers with a lambda expression
@@ -59,8 +46,28 @@ public class GameActivity extends AppCompatActivity {
         button.setResponseString(this.responseType.getResponse(answer));
         button.setId(id);
     }
-    /*
-    public void onClickUpdatePlayerList(View view) { // TODO: changer le onClick par un observer
+
+    private void test() {
+        Answer a = new Answer("No Game No Life", "Suzuki Konomi", "This Game");
+        Answer b = new Answer("No Game No Life Movie", "Suzuki Konomi", "There is a reason");
+        Answer c = new Answer("Sword Art Online", "LiSA", "crossing field");
+        Answer d = new Answer("Sword Art Online II", "Tomatsu Haruka", "courage");
+
+        this.responseType = new ResponseTypeTitle();
+        this.response = new Response();
+        this.response.addAnswer(a);
+        this.response.addAnswer(b);
+        this.response.addAnswer(c);
+        this.response.addAnswer(d);
+
+        this.response.setAnswerId(1);
+
+        updateButtons(this.response);
+
+        this.updateListPlayer();
+    }
+
+    private void updateListPlayer() {
         SharedPreferences playerList = getSharedPreferences("PLAYER_LIST", MODE_PRIVATE);
         Set<String> list2 = playerList.getStringSet("list", new HashSet<String>());
         ArrayList<String> list = new ArrayList<>();
@@ -70,8 +77,15 @@ public class GameActivity extends AppCompatActivity {
         }
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.simple_list_item, list);
-        ListView playerListView = (ListView) findViewById(R.id.room_playerList);
+
+        ListView playerListView = (ListView) findViewById(R.id.game_playerList);
         playerListView.setAdapter(adapter);
-        this.removePlayer("Alexis");
-    }*/
+    }
+
+    public void onClickButtonResponse(View view) {
+        ButtonResponse buttonResponse = (ButtonResponse) findViewById(view.getId());
+        buttonResponse.setBackgroundColor(getResources().getColor(R.color.wrong_answer));
+        this.buttons.get(this.response.getAnswerId()).setBackgroundColor(getResources().getColor(R.color.right_answer));
+
+    }
 }

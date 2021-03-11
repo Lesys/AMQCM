@@ -26,6 +26,10 @@ public class Response {
         return this.answers.get(this.answerId);
     }
 
+    public int getAnswerId() {
+        return this.answerId;
+    }
+
     public void setAnswerId(int answerId) {
         this.answerId = answerId;
     }

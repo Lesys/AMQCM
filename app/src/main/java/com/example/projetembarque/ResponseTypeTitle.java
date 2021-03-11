@@ -1,14 +1,14 @@
 package com.example.projetembarque;
 
-public class ResponseTypeAnime extends ResponseType {
+public class ResponseTypeTitle extends ResponseType {
     protected int id;
     protected String type;
 
-    public ResponseTypeAnime() {
+    public ResponseTypeTitle() {
         super();
     }
 
     public String getResponse(Answer answer) {
-        return answer.getAnime();
+        return answer.getTitle();
     }
 }

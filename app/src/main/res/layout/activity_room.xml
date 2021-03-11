@@ -107,12 +107,19 @@
                     android:layout_width="match_parent"
                     android:layout_height="53dp" />
 
-                <Button
+                <!--<Button
                     android:id="@+id/room_buttonLaunchGame"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:onClick="onClickUpdatePlayerList"
-                    android:text="@string/buttonLaunchGame" />
+                    android:onClick="onClickGame"
+                    android:text="@string/buttonLaunchGame" />-->
+
+                <Button
+                    android:id="@+id/room_buttonLaunchGame"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onClickGame"
+                    android:text="@string/buttonLaunchGame"/>
             </LinearLayout>
 
         </LinearLayout>

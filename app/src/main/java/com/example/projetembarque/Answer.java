@@ -5,8 +5,10 @@ public class Answer {
     private String band;
     private String title;
 
-    public Answer() {
-        // TODO : remplir les variables ?
+    public Answer(String anime, String band, String title) {
+        this.anime = anime;
+        this.band = band;
+        this.title = title;
     }
 
     public String getAnime() {
