@@ -8,19 +8,66 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.content.SharedPreferences;
+import android.widget.Spinner;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
 public class RoomActivity extends AppCompatActivity {
-
+private int i = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_room);
         this.test();
         //fillSpinerResponseType();
+    }
+
+    private void saveNumberMusic() {
+        SharedPreferences numberMusic = getSharedPreferences("PLAYER_LIST", MODE_PRIVATE);
+        SharedPreferences.Editor numberMusicEditor = numberMusic.edit();
+
+        int nbMusic = Integer.parseInt(((Spinner) findViewById(R.id.room_numberMusic)).getSelectedItem().toString());
+
+        /*System.out.println(list.toArray());*/
+        numberMusicEditor.putInt("numberMusic", nbMusic);
+        numberMusicEditor.commit();
+    }
+
+    private void saveNumberMaxPlayer() {
+        SharedPreferences numberMaxPlayer = getSharedPreferences("PLAYER_LIST", MODE_PRIVATE);
+        SharedPreferences.Editor numberMaxPlayerEditor = numberMaxPlayer.edit();
+
+        int nbMaxPlayer = Integer.parseInt(((Spinner) findViewById(R.id.room_numberMaxPlayer)).getSelectedItem().toString());
+
+        /*System.out.println(list.toArray());*/
+        numberMaxPlayerEditor.putInt("numberMaxPlayer", nbMaxPlayer);
+        numberMaxPlayerEditor.commit();
+    }
+
+    private void saveResponseTime() {
+        SharedPreferences responseTime = getSharedPreferences("PLAYER_LIST", MODE_PRIVATE);
+        SharedPreferences.Editor responseTimeEditor = responseTime.edit();
+
+        int repTime = Integer.parseInt(((Spinner) findViewById(R.id.room_responseTime)).getSelectedItem().toString());
+
+        /*System.out.println(list.toArray());*/
+        responseTimeEditor.putInt("responseTime", repTime);
+        responseTimeEditor.commit();
+    }
+
+    private void saveResponseType() {
+        SharedPreferences responseType = getSharedPreferences("PLAYER_LIST", MODE_PRIVATE);
+        SharedPreferences.Editor responseTypeEditor = responseType.edit();
+
+        String respType = ((Spinner) findViewById(R.id.room_responseType)).getSelectedItem().toString();
+
+        //((TextView) findViewById(R.id.room_profile)).setText(respType + "new2"); // Récupère bien le groupe
+        /*System.out.println(list.toArray());*/
+        responseTypeEditor.putString("responseType", respType);
+        responseTypeEditor.commit();
     }
 
 /*
@@ -68,7 +115,13 @@ public class RoomActivity extends AppCompatActivity {
     }
 
     public void onClickGame(View view) {
+        this.saveNumberMusic();
+        this.saveNumberMaxPlayer();
+        this.saveResponseTime();
+        this.saveResponseType();
+
         Intent gameIndent = new Intent(getApplicationContext(), GameActivity.class);
+
         startActivityForResult(gameIndent, 1);
     }
 
@@ -98,13 +151,5 @@ public class RoomActivity extends AppCompatActivity {
         addPlayer("Lesys");
         addPlayer("Yann");
         addPlayer("Logic");
-        addPlayer("Snalts1");
-        addPlayer("Lesys1");
-        addPlayer("Yann1");
-        addPlayer("Logic1");
-        addPlayer("Snalts2");
-        addPlayer("Lesys2");
-        addPlayer("Yann2");
-        addPlayer("Logic2");
     }
 }

@@ -4,9 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Spinner;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -17,6 +20,14 @@ public class GameActivity extends AppCompatActivity {
     private ResponseType responseType;
     private Response response;
     private List<ButtonResponse> buttons;
+    private int numberMusic;
+    private int numberMaxPlayer;
+    /**
+     * Number of seconds a player has to answer
+     */
+    private int responseTime;
+
+    private CountDownTimer timer = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +39,11 @@ public class GameActivity extends AppCompatActivity {
         this.buttons.add(findViewById(R.id.game_buttonResponse3));
         this.buttons.add(findViewById(R.id.game_buttonResponse4));
         this.test();
+    }
+
+    protected void onPostResume() {
+        super.onPostResume();
+        this.updateValues();
     }
 
     public void updateButtons(Response response) {
@@ -62,9 +78,93 @@ public class GameActivity extends AppCompatActivity {
 
         this.response.setAnswerId(1);
 
-        updateButtons(this.response);
+        this.updateButtons(this.response);
 
         this.updateListPlayer();
+
+        this.updateValues();
+
+        this.resetTimer();
+    }
+
+    private void updateValues() {
+        this.takeNumberMaxPlayer();
+        this.takeNumberMusic();
+        this.takeResponseTime();
+        this.takeResponseType();
+    }
+
+
+    private void takeValues() {
+        SharedPreferences values = getSharedPreferences("PLAYER_LIST", MODE_PRIVATE);
+        this.numberMusic = values.getInt("numberMusic", 20);
+        this.numberMaxPlayer = values.getInt("numberMaxPlayer", 21);
+        this.responseTime = values.getInt("responseTime", 22);
+        String responseTypeString = values.getString("responseType", "");
+
+        //((TextView) findViewById(R.id.game_test)).setText("Type: " + responseTypeString);
+        switch (responseTypeString) {
+            case "Band": this.responseType =  ResponseTypeBand.getInstance();
+                break;
+            case "Title": this.responseType =  ResponseTypeTitle.getInstance();
+                break;
+            case "Anime":
+            default: this.responseType =  ResponseTypeAnime.getInstance();
+        }
+    }
+
+    private void takeNumberMusic() {
+        SharedPreferences numberMusic = getSharedPreferences("PLAYER_LIST", MODE_PRIVATE);
+        this.numberMusic = numberMusic.getInt("numberMusic", 10);
+    }
+
+    private void takeNumberMaxPlayer() {
+        SharedPreferences numberMaxPlayer = getSharedPreferences("PLAYER_LIST", MODE_PRIVATE);
+        this.numberMaxPlayer = numberMaxPlayer.getInt("numberMaxPlayer", 4);
+    }
+
+    private void takeResponseTime() {
+        SharedPreferences responseTime = getSharedPreferences("PLAYER_LIST", MODE_PRIVATE);
+        this.responseTime = responseTime.getInt("responseTime", 20);
+    }
+
+    private void takeResponseType() {
+        SharedPreferences responseType = getSharedPreferences("PLAYER_LIST", MODE_PRIVATE);
+        String responseTypeString = responseType.getString("responseType", "Anime");
+
+        //((TextView) findViewById(R.id.game_test)).setText("Type: " + responseTypeString);
+        switch (responseTypeString) {
+            case "Band": this.responseType =  ResponseTypeBand.getInstance();
+                break;
+            case "Title": this.responseType =  ResponseTypeTitle.getInstance();
+                break;
+            case "Anime":
+            default: this.responseType =  ResponseTypeAnime.getInstance();
+        }
+    }
+
+    private void resetTimer() {
+        if (this.timer != null)
+            this.timer.cancel();
+        this.timer = new CountDownTimer(this.responseTime * 1000, 1000) {
+            @Override
+            public void onTick(long time) {
+                ((TextView) findViewById(R.id.game_timerDisplay)).setText("Remaining time: " + time / 1000);
+            }
+
+            @Override
+            public void onFinish() {
+                ((TextView) findViewById(R.id.game_timerDisplay)).setText("Showing answer...");
+            }
+        }.start();
+    }
+
+    private void stopAnswers() {
+    }
+
+    private void playNextMusic() {
+        this.resetTimer();
+
     }
 
     private void updateListPlayer() {
@@ -86,6 +186,6 @@ public class GameActivity extends AppCompatActivity {
         ButtonResponse buttonResponse = (ButtonResponse) findViewById(view.getId());
         buttonResponse.setBackgroundColor(getResources().getColor(R.color.wrong_answer));
         this.buttons.get(this.response.getAnswerId()).setBackgroundColor(getResources().getColor(R.color.right_answer));
-
+        this.resetTimer();
     }
 }

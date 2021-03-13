@@ -11,4 +11,11 @@ public class ResponseTypeTitle extends ResponseType {
     public String getResponse(Answer answer) {
         return answer.getTitle();
     }
+
+    public static ResponseType getInstance() {
+        if (ResponseTypeTitle.instance == null)
+            ResponseTypeTitle.instance = new ResponseTypeTitle();
+
+        return ResponseTypeTitle.instance;
+    }
 }

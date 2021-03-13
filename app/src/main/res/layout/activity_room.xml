@@ -98,7 +98,7 @@
                     android:textAlignment="center" />
 
                 <Spinner
-                    android:id="@+id/room_reponseType"
+                    android:id="@+id/room_responseType"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:entries="@array/array_responseType" />

@@ -1,12 +1,25 @@
 package com.example.projetembarque;
 
-public abstract class ResponseType {
+public class ResponseType {
     protected int id;
     protected String type;
+    protected static ResponseType instance = null;
 
-    public ResponseType() {
+    protected ResponseType() {
         super();
     }
 
-    public abstract String getResponse(Answer answer);
+    public String getResponse(Answer answer) {
+        return "";
+    }
+    public static ResponseType getInstance() {
+        if (ResponseType.instance == null)
+            ResponseType.instance = new ResponseType();
+
+        return ResponseType.instance;
+    }
+
+    public String toString() {
+        return this.getClass().toString();
+    }
 }
