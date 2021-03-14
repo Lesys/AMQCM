@@ -1,4 +1,4 @@
-package com.example.projetembarque;
+package com.example.projetembarque.modele;
 
 public class ResponseTypeAnime extends ResponseType {
     protected ResponseTypeAnime() {

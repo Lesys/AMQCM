@@ -9,11 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AMQCM">
-        <activity android:name=".GameActivity"></activity>
-        <activity android:name=".ProfileActivity" />
-        <activity android:name=".RoomActivity" />
-        <activity android:name=".ConnectionActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".view.GameActivity"></activity>
+        <activity android:name=".view.ProfileActivity" />
+        <activity android:name=".view.RoomActivity" />
+        <activity android:name=".view.ConnectionActivity" />
+        <activity android:name=".view.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

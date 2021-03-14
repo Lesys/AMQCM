@@ -1,4 +1,4 @@
-    package com.example.projetembarque;
+    package com.example.projetembarque.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,7 +11,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 
-import org.json.JSONException;
+import com.example.projetembarque.R;
 
     public class MainActivity extends AppCompatActivity {
 
@@ -24,6 +24,7 @@ import org.json.JSONException;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         this.obj = new Object();
+
     }
 
     public void onClickConnect(View view) {

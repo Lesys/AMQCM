@@ -1,4 +1,4 @@
-package com.example.projetembarque;
+package com.example.projetembarque.modele;
 
 import java.util.ArrayList;
 import java.util.List;

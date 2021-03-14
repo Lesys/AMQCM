@@ -1,4 +1,4 @@
-package com.example.projetembarque;
+package com.example.projetembarque.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.projetembarque.R;
 
 public class ExActivity extends AppCompatActivity {
 

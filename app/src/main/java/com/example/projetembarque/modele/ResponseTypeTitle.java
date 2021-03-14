@@ -1,4 +1,4 @@
-package com.example.projetembarque;
+package com.example.projetembarque.modele;
 
 public class ResponseTypeTitle extends ResponseType {
     protected int id;

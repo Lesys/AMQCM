@@ -1,4 +1,4 @@
-package com.example.projetembarque;
+package com.example.projetembarque.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,8 +8,16 @@ import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Spinner;
 import android.widget.TextView;
+
+import com.example.projetembarque.modele.Answer;
+import com.example.projetembarque.ButtonResponse;
+import com.example.projetembarque.R;
+import com.example.projetembarque.modele.Response;
+import com.example.projetembarque.modele.ResponseType;
+import com.example.projetembarque.modele.ResponseTypeAnime;
+import com.example.projetembarque.modele.ResponseTypeBand;
+import com.example.projetembarque.modele.ResponseTypeTitle;
 
 import java.util.ArrayList;
 import java.util.HashSet;

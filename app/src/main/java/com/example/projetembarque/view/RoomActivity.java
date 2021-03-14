@@ -1,4 +1,4 @@
-package com.example.projetembarque;
+package com.example.projetembarque.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,7 +9,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.content.SharedPreferences;
 import android.widget.Spinner;
-import android.widget.TextView;
+
+import com.example.projetembarque.R;
 
 import java.util.ArrayList;
 import java.util.HashSet;

@@ -1,8 +1,10 @@
-package com.example.projetembarque;
+package com.example.projetembarque.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.projetembarque.R;
 
 public class ProfileActivity extends AppCompatActivity {
 
