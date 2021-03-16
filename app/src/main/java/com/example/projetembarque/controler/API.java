@@ -30,6 +30,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.projetembarque.URLConnect;
+import com.example.projetembarque.modele.Player;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -43,9 +44,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 
-public class API<apiKeyCredentials, it> extends Context {
+public class API extends Context {
 
-    private Object obj;
+    private final Object obj;
     private static API api = null;
 
     public API(Object obj) throws InterruptedException {
@@ -60,12 +61,12 @@ public class API<apiKeyCredentials, it> extends Context {
 
 
 
-    /*//Player [] players*/
-    public ArrayList<Integer> getListAnime() throws InterruptedException, JSONException {
+    /*//*/
+    public ArrayList<Integer> getListAnime(Player [] players) throws InterruptedException, JSONException {
         ArrayList<Integer> idAnime = new ArrayList<>();
-        //for (Player player : players) {
+        for (Player player : players) {
             JSONArray data;
-            String s_url = "https://api.jikan.moe/v3/user/Nekomata1037/animelist/all";
+            String s_url = "https://api.jikan.moe/v3/user/"+player.getLogin()+"/animelist/all";
             URLConnect link = new URLConnect(s_url, obj);
             link.start();
             link.join();
@@ -75,7 +76,7 @@ public class API<apiKeyCredentials, it> extends Context {
                 int anime = data.getJSONObject(i).getInt("mal_id");
                 idAnime.add(anime);
             }
-        //}
+        }
         for (int i = 0; i < idAnime.toArray().length; i++)
             System.out.println(idAnime.get(i));
         return idAnime;

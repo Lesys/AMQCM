@@ -2,6 +2,8 @@ plugins {
     id 'com.android.application'
 }
 apply plugin: 'realm-android'
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
 
 android {
     compileSdkVersion 29
@@ -31,7 +33,9 @@ android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
+        
     }
+
 }
 
 realm {
@@ -40,13 +44,20 @@ realm {
 
 dependencies {
 
+
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'com.google.android.material:material:1.1.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'net.sandrohc:reactive-jikan:1.0.0'
     implementation group: 'org.json', name: 'json', version: '20201115'
-    implementation 'org.mongodb:stitch-android-sdk:4.5.0'
+    implementation 'mysql:mysql-connector-java:8.0.13'
+    implementation 'org.mariadb.jdbc:mariadb-java-client:2.1.2'
+    /*
+    implementation platform('com.google.firebase:firebase-bom:26.7.0')
+    implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.google.firebase:firebase-firestore'
+     */
 
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'

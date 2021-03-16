@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "69355801758",
+    "project_id": "amqcm-f000c",
+    "storage_bucket": "amqcm-f000c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:69355801758:android:9b0e7445a86b790fb43f8f",
+        "android_client_info": {
+          "package_name": "com.example.projetembarque"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "69355801758-d96elaasvqv89rn8u1kaq4druoov8bsn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBVTj4aHOk_3AB0iEv91bZ6Ej-dgJLfpLc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "69355801758-d96elaasvqv89rn8u1kaq4druoov8bsn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

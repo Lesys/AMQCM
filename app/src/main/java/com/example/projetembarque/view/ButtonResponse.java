@@ -1,4 +1,4 @@
-package com.example.projetembarque;
+package com.example.projetembarque.view;
 
 import android.content.Context;
 import android.util.AttributeSet;

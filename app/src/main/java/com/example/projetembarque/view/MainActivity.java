@@ -12,6 +12,9 @@ import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 
 import com.example.projetembarque.R;
+import com.example.projetembarque.controler.Registration;
+
+import java.sql.SQLException;
 
     public class MainActivity extends AppCompatActivity {
 
@@ -24,6 +27,18 @@ import com.example.projetembarque.R;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         this.obj = new Object();
+
+        try {
+            System.out.println("Main Activity");
+
+            Registration r = new Registration(obj, "test", "String password", "String loginMAL");
+        } catch (ClassNotFoundException e) {
+            System.out.println("Exception ClassNotFound");
+            e.printStackTrace();
+        } catch (SQLException throwables) {
+            System.out.println("Exception SQLException");
+            throwables.printStackTrace();
+        }
 
     }
 

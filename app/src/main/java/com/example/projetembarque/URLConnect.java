@@ -10,7 +10,7 @@ import java.net.URL;
 import java.util.Scanner;
 
 public class URLConnect extends Thread {
-    private final Object obj;
+    private Object obj;
     private String s_url;
     JSONObject data;
     public URLConnect(String s_url,Object obj){
@@ -21,6 +21,7 @@ public class URLConnect extends Thread {
     public void run() {
         try {
             synchronized (obj) {
+                obj.wait(4000);
                 URL url = new URL(this.s_url);
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
                 conn.setRequestMethod("GET");

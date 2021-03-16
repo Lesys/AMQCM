@@ -1,12 +1,18 @@
 package com.example.projetembarque.modele;
 
+import com.example.projetembarque.controler.API;
+
 public class Player {
     private String login;
     private String loginMAL;
     private int score;
+    private Object obj;
+    private API api;
 
-    public Player(String login) {
+    public Player(String login, String loginMAL, Object obj) {
         this.login = login;
+        this.loginMAL = loginMAL;
+        this.obj = obj;
     }
 
     /**
@@ -26,5 +32,17 @@ public class Player {
      */
     public void scored() {
         this.score++;
+    }
+
+    public String getLogin() {
+        return this.login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
+    public void setLoginMAL(String loginMAL) {
+        this.loginMAL = loginMAL;
     }
 }

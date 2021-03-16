@@ -55,28 +55,28 @@
             android:layout_height="match_parent"
             android:orientation="horizontal">
 
-            <com.example.projetembarque.ButtonResponse
+            <com.example.projetembarque.view.ButtonResponse
                 android:id="@+id/game_buttonResponse1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:onClick="onClickButtonResponse"
                 android:textAllCaps="false" />
 
-            <com.example.projetembarque.ButtonResponse
+            <com.example.projetembarque.view.ButtonResponse
                 android:id="@+id/game_buttonResponse2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:onClick="onClickButtonResponse"
                 android:textAllCaps="false" />
 
-            <com.example.projetembarque.ButtonResponse
+            <com.example.projetembarque.view.ButtonResponse
                 android:id="@+id/game_buttonResponse3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:onClick="onClickButtonResponse"
                 android:textAllCaps="false" />
 
-            <com.example.projetembarque.ButtonResponse
+            <com.example.projetembarque.view.ButtonResponse
                 android:id="@+id/game_buttonResponse4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
