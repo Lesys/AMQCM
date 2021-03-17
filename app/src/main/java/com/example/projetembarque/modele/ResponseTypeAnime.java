@@ -1,6 +1,7 @@
 package com.example.projetembarque.modele;
 
 public class ResponseTypeAnime extends ResponseType {
+    private static ResponseType instance = null;
     protected ResponseTypeAnime() {
         super();
     }
@@ -14,5 +15,10 @@ public class ResponseTypeAnime extends ResponseType {
             ResponseTypeAnime.instance = new ResponseTypeAnime();
 
         return ResponseTypeAnime.instance;
+    }
+
+    @Override
+    public String toString() {
+        return "Anime Type";
     }
 }

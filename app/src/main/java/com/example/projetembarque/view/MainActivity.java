@@ -26,7 +26,7 @@ import java.sql.SQLException;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        this.obj = new Object();
+        /*this.obj = new Object();
 
         try {
             System.out.println("Main Activity");
@@ -38,7 +38,7 @@ import java.sql.SQLException;
         } catch (SQLException throwables) {
             System.out.println("Exception SQLException");
             throwables.printStackTrace();
-        }
+        }*/
 
     }
 

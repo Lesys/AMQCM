@@ -3,7 +3,7 @@ package com.example.projetembarque.modele;
 public class ResponseType {
     protected int id;
     protected String type;
-    protected static ResponseType instance = null;
+    private static ResponseType instance = null;
 
     protected ResponseType() {
         super();

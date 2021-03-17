@@ -1,8 +1,7 @@
 package com.example.projetembarque.modele;
 
 public class ResponseTypeBand extends ResponseType {
-    protected int id;
-    protected String type;
+    private static ResponseType instance = null;
 
     public ResponseTypeBand() {
         super();
@@ -17,5 +16,10 @@ public class ResponseTypeBand extends ResponseType {
             ResponseTypeBand.instance = new ResponseTypeBand();
 
         return ResponseTypeBand.instance;
+    }
+
+    @Override
+    public String toString() {
+        return "Band Type";
     }
 }

@@ -1,8 +1,7 @@
 package com.example.projetembarque.modele;
 
 public class ResponseTypeTitle extends ResponseType {
-    protected int id;
-    protected String type;
+    private static ResponseType instance = null;
 
     public ResponseTypeTitle() {
         super();
@@ -17,5 +16,10 @@ public class ResponseTypeTitle extends ResponseType {
             ResponseTypeTitle.instance = new ResponseTypeTitle();
 
         return ResponseTypeTitle.instance;
+    }
+
+    @Override
+    public String toString() {
+        return "Title Type";
     }
 }

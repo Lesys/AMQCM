@@ -9,4 +9,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="right_answer">#FF00FF00</color>
     <color name="wrong_answer">#FFFF0000</color>
+    <color name="button_response_background">#FFD3D3D3</color>
+
 </resources>

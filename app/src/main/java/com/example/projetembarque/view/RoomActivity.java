@@ -17,7 +17,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class RoomActivity extends AppCompatActivity {
-private int i = 0;
+    private Intent gameIndent = null;
+    private int i = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -121,9 +122,10 @@ private int i = 0;
         this.saveResponseTime();
         this.saveResponseType();
 
-        Intent gameIndent = new Intent(getApplicationContext(), GameActivity.class);
+        if (this.gameIndent == null)
+            this.gameIndent = new Intent(getApplicationContext(), GameActivity.class);
 
-        startActivityForResult(gameIndent, 1);
+        startActivityForResult(this.gameIndent, 1);
     }
 
     public void onClickUpdatePlayerList(View view) { // TODO: changer le onClick par un observer
