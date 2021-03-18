@@ -34,7 +34,6 @@ public class Registration {
     Player player;
 
 
-
     public Registration(Object obj, String login, String password, String loginMAL) throws ClassNotFoundException, SQLException {
 
        /* // Access a Cloud Firestore instance from your Activity
@@ -63,7 +62,7 @@ public class Registration {
                     }
                 });*/
 
-        Connection connection ;
+/*        Connection connection ;
 
         Statement statement ;
 
@@ -84,20 +83,20 @@ public class Registration {
 
 
 
-        /* Exécution d'une requête de lecture */
+        *//* Exécution d'une requête de lecture *//*
         ResultSet resultat = statement.executeQuery( "SELECT idPlayer  FROM Player;" );
 
-        /* Récupération des données du résultat de la requête de lecture */
+        *//* Récupération des données du résultat de la requête de lecture *//*
         while ( resultat.next() ) {
             int idUtilisateur = resultat.getInt("idPlayer");
             System.out.println("Un user à comme ID");
             System.out.println(idUtilisateur);
 
-            /* Traiter ici les valeurs récupérées. */
+            *//* Traiter ici les valeurs récupérées. *//*
 
         }
 
-    }
+    }*/
 
     /*public Registration(Object obj, String login, String password, String loginMAL) {
         player = new Player(login, loginMAL, obj);
@@ -105,4 +104,5 @@ public class Registration {
 
 
     }*/
+    }
 }

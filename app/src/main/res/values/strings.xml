@@ -30,4 +30,16 @@
         <item>Title</item>
         <item>Band</item>
     </string-array>
+
+    <string name="connection_succeed">Connection succeed</string>
+    <string name="error_no_internet">Error no internet</string>
+    <string name="error_unknown_error">Unknown error</string>
+    <string name="error_authentication_canceled">Error authentification canceled</string>
+    <string name="button_update_account">Update account</string>
+    <string name="button_sign_out_account">Sign out</string>
+    <string name="button_delete_account">Delete account</string>
+    <string name="info_no_email_found">No email found</string>
+    <string name="info_no_username_found">No username found</string>
+    <string name="loginMAL">Login MyAnimeList</string>
+
 </resources>

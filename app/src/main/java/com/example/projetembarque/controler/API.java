@@ -62,11 +62,11 @@ public class API extends Context {
 
 
     /*//*/
-    public ArrayList<Integer> getListAnime(Player [] players) throws InterruptedException, JSONException {
+    public ArrayList<Integer> getListAnime(Player player) throws InterruptedException, JSONException {
         ArrayList<Integer> idAnime = new ArrayList<>();
-        for (Player player : players) {
+        //for (Player player : players) {
             JSONArray data;
-            String s_url = "https://api.jikan.moe/v3/user/"+player.getLogin()+"/animelist/all";
+            String s_url = "https://api.jikan.moe/v3/user/"+player.getLoginMAL()+"/animelist/all";
             URLConnect link = new URLConnect(s_url, obj);
             link.start();
             link.join();
@@ -76,9 +76,7 @@ public class API extends Context {
                 int anime = data.getJSONObject(i).getInt("mal_id");
                 idAnime.add(anime);
             }
-        }
-        for (int i = 0; i < idAnime.toArray().length; i++)
-            System.out.println(idAnime.get(i));
+        //}
         return idAnime;
     }
     /*

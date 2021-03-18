@@ -60,7 +60,7 @@
         android:layout_marginTop="35dp"
         android:layout_marginEnd="50dp"
         android:layout_marginBottom="101dp"
-        android:onClick="onClickConnect"
+        android:onClick="onClickLoginButton"
         android:text="@string/connect"
         app:layout_constraintBottom_toTopOf="@+id/main_createRoom"
         app:layout_constraintEnd_toEndOf="parent"
@@ -73,7 +73,17 @@
         android:layout_height="wrap_content"
         android:text="@string/test"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/main_profile"
-        tools:layout_editor_absoluteX="176dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_profile" />
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/main_activity_coordinator_layout"
+        android:layout_width="374dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

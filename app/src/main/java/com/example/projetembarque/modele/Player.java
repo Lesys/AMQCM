@@ -3,16 +3,19 @@ package com.example.projetembarque.modele;
 import com.example.projetembarque.controler.API;
 
 public class Player {
+    private String uid;
     private String login;
     private String loginMAL;
     private int score;
     private Object obj;
     private API api;
 
-    public Player(String login, String loginMAL, Object obj) {
+    private static final String COLLECTION_NAME = "Player";
+
+    public Player(String uid, String login, String loginMAL) {
+        this.uid = uid;
         this.login = login;
         this.loginMAL = loginMAL;
-        this.obj = obj;
     }
 
     /**

@@ -51,13 +51,14 @@ dependencies {
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'net.sandrohc:reactive-jikan:1.0.0'
     implementation group: 'org.json', name: 'json', version: '20201115'
-    implementation 'mysql:mysql-connector-java:8.0.13'
-    implementation 'org.mariadb.jdbc:mariadb-java-client:2.1.2'
-    /*
+    /*implementation 'mysql:mysql-connector-java:8.0.13'
+    implementation 'org.mariadb.jdbc:mariadb-java-client:2.1.2'*/
     implementation platform('com.google.firebase:firebase-bom:26.7.0')
     implementation 'com.google.firebase:firebase-analytics'
     implementation 'com.google.firebase:firebase-firestore'
-     */
+    implementation 'com.google.firebase:firebase-auth'
+    implementation 'com.firebaseui:firebase-ui-auth:6.4.0'
+
 
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'

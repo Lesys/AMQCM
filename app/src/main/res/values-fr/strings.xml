@@ -28,4 +28,15 @@
         <item>Titre</item>
         <item>Groupe</item>
     </string-array>
+    <string name="test">test</string>
+    <string name="connection_succeed">Connexion réussite</string>
+    <string name="error_no_internet">Erreur pas d\'internet</string>
+    <string name="error_unknown_error">Erreurr inconnue</string>
+    <string name="error_authentication_canceled">Erreur authentification annulée</string>
+    <string name="button_update_account">Mettre à jour le compte</string>
+    <string name="button_sign_out_account">Se déconnecter</string>
+    <string name="button_delete_account">Supprimer le compte</string>
+    <string name="info_no_email_found">Pas d\'email trouvé</string>
+    <string name="info_no_username_found">Pas de username trouvé</string>
+    <string name="loginMAL">Login MyAnimeList</string>
 </resources>
