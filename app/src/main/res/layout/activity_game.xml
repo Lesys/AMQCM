@@ -26,6 +26,12 @@
                 android:text="@string/profile" />
 
             <TextView
+                android:id="@+id/game_nbMusics"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <TextView
                 android:id="@+id/game_roomNumber"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -44,6 +50,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
         </TableRow>
+
+        <TextView
+            android:id="@+id/game_score"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
         <TextView
             android:id="@+id/game_timerDisplay"

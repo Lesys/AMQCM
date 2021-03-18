@@ -2,6 +2,7 @@ package com.example.projetembarque.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -31,7 +32,9 @@ public class GameActivity extends AppCompatActivity {
     private Response response;
     private List<ButtonResponse> buttons;
     private int numberMusic;
+    private int numberMusicPlayed;
     private int numberMaxPlayer;
+    private int score;
 
     private static List<Response> listResponses; // TODO DELETE
     /**
@@ -46,6 +49,8 @@ public class GameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
         GameActivity.initResponses();
+        this.numberMusicPlayed = 1;
+        this.score = 0;
         this.updateValues();
         this.buttons = new ArrayList<>();
         this.buttons.add(findViewById(R.id.game_buttonResponse1));
@@ -59,6 +64,11 @@ public class GameActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         this.updateValues();
+    }
+
+    private void updateNbMusicPlayed() {
+        ((TextView) findViewById(R.id.game_nbMusics)).setText(this.numberMusicPlayed + " / " + this.numberMusic);
+        ((TextView) findViewById(R.id.game_score)).setText("Score: " + this.score);
     }
 
     public void updateButtons() {
@@ -185,6 +195,7 @@ public class GameActivity extends AppCompatActivity {
     }
 
     private void resetTimer() {
+        this.updateNbMusicPlayed();
         this.stopTimer();
         this.timer = new CountDownTimerPerso(this.responseTime * 1000, 1000, this) {
             @Override
@@ -207,14 +218,24 @@ public class GameActivity extends AppCompatActivity {
         this.timer = new CountDownTimerPerso(5 * 1000, 1000, this) {
             @Override
             public void onTick(long time) {
-                ((TextView) findViewById(R.id.game_timerDisplay)).setText("Next music plays in: " + time / 1000);
+                if (gameActivity.numberMusicPlayed != gameActivity.numberMusic)
+                    ((TextView) findViewById(R.id.game_timerDisplay)).setText("Next music plays in: " + time / 1000);
+                else
+                    ((TextView) findViewById(R.id.game_timerDisplay)).setText("End of the game in: " + time / 1000);
             }
 
             @Override
             public void onFinish() {
-                ((TextView) findViewById(R.id.game_timerDisplay)).setText("Music loading...");
+                // If there is still some music to play
+                if (gameActivity.numberMusicPlayed != gameActivity.numberMusic) {
+                    ((TextView) findViewById(R.id.game_timerDisplay)).setText("Music loading...");
 
-                gameActivity.nextMusic();
+                    gameActivity.nextMusic();
+                }
+                // If all music were played
+                else {
+                    finish();
+                }
             }
         }.start();
     }
@@ -238,6 +259,8 @@ public class GameActivity extends AppCompatActivity {
     }
 
     public void nextMusic() {
+        this.numberMusicPlayed++;
+
         this.response = this.getNextResponse();
 
         this.updateButtons();
@@ -264,6 +287,9 @@ public class GameActivity extends AppCompatActivity {
         ButtonResponse buttonResponse = (ButtonResponse) findViewById(view.getId());
         buttonResponse.setBackgroundColor(getResources().getColor(R.color.wrong_answer));
         this.buttons.get(this.response.getAnswerId()).setBackgroundColor(getResources().getColor(R.color.right_answer));
+
+        if (this.buttons.get(this.response.getAnswerId()).equals(buttonResponse))
+            this.score++;
         this.stopAnswers();
     }
 }

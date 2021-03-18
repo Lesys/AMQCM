@@ -9,6 +9,7 @@
     <string name="login">Login</string>
     <string name="password">Mot de passe</string>
     <string name="roomID">Id de la salle</string>
+    <string name="score">Score</string>
 
     <string name="roomNumber">Numéro de la salle: </string>
     <string name="buttonLaunchGame">Lancer la partie</string>
