@@ -1,6 +1,7 @@
 package com.example.projetembarque.controler;
 
 import com.example.projetembarque.modele.Player;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -24,14 +25,18 @@ public class PlayerHelper {
 
     // --- GET ---
 
-    public static Task<DocumentSnapshot> getUser(String uid){
+    public static Task<DocumentSnapshot> getPlayer(String uid){
         return PlayerHelper.getUsersCollection().document(uid).get();
     }
 
     // --- GET ---
 
     public static String getUserLoginMAL(String uid){
-        return PlayerHelper.getUsersCollection().document(uid).get().getResult().get("loginMAL").toString();
+        return getPlayer(uid).getResult().getString("loginMAL");
+    }
+
+    public static String getUserLogin(String uid){
+        return getPlayer(uid).getResult().getString("login");
     }
 
     // --- UPDATE ---

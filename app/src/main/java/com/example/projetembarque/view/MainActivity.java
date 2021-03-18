@@ -14,9 +14,13 @@ import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 
 import com.example.projetembarque.R;
+import com.example.projetembarque.controler.API;
 import com.example.projetembarque.controler.PlayerHelper;
+import com.example.projetembarque.modele.Player;
 import com.firebase.ui.auth.*;
 import com.google.android.material.snackbar.Snackbar;
+
+import org.json.JSONException;
 
 import java.util.Arrays;
 
@@ -36,8 +40,7 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         coordinatorLayout = (CoordinatorLayout) findViewById(R.id.main_activity_coordinator_layout);
-        /*this.obj = new Object();*/
-
+        this.obj = new Object();
     }
 
     @Override
@@ -173,9 +176,19 @@ public class MainActivity extends BaseActivity {
         });
     }
 
-    public void onClickRoom(View view) {
+    public void onClickRoom(View view) throws InterruptedException, JSONException {
+        /*if (this.isCurrentUserLogged()) {
+            String uid = this.getCurrentUser().getUid();
+            System.out.println(uid);
+            System.out.println(PlayerHelper.getUserLoginMAL(uid));
+            System.out.println(PlayerHelper.getUserLogin(uid));
+
+            Player p = new Player(uid, PlayerHelper.getUserLogin(uid), PlayerHelper.getUserLoginMAL(uid));
+            API api = API.getInstance(obj);
+            System.out.println(api.getMusic(api.getListAnime(p).getJSONObject(1)).getString(1));*/
         Intent createRoomIndent = new Intent(getApplicationContext(), RoomActivity.class);
         startActivityForResult(createRoomIndent, 1);
+        //}
     }
 
     public void onClickProfile(View view) {

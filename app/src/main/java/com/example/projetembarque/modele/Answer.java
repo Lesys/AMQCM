@@ -22,4 +22,16 @@ public class Answer {
     public String getTitle() {
         return this.title;
     }
+
+    public void setAnime(String anime) {
+        this.anime = anime;
+    }
+
+    public void setBand(String band) {
+        this.band = band;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
 }

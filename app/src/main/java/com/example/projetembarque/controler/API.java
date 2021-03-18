@@ -30,6 +30,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.projetembarque.URLConnect;
+import com.example.projetembarque.modele.Answer;
 import com.example.projetembarque.modele.Player;
 
 import org.json.JSONArray;
@@ -71,21 +72,44 @@ public class API extends Context {
             link.start();
             link.join();
             data = link.getData().getJSONArray("anime");
-
-            for (int i = 0; i < data.length(); i++) {
-                int anime = data.getJSONObject(i).getInt("mal_id");
-                idAnime.add(anime);
+            for (int i = 0; i < data.length(); i++){
+                idAnime.add(data.getJSONObject(i).getInt("mal_id"));
             }
         //}
         return idAnime;
     }
+
     /*
      * getTitle return the Japaness title in romanji.
      * @throws getting back JSONException if data not declare
      */
-    public int getId(JSONObject data) throws JSONException {
-        return data.getInt("mal_id");
+    public ArrayList<Answer> getAnswer(int idAnime) throws JSONException, InterruptedException {
+        ArrayList<Answer> array = new ArrayList<>();
+        String s_url = "https://api.jikan.moe/v3/anime/"+idAnime;
+        URLConnect link = new URLConnect(s_url, obj);
+        link.start();
+        link.join();
+        JSONArray data = link.getData().getJSONArray("opening_themes");
+        String title = link.getData().getString("title");
+        for (int i = 0; i < data.length(); i++){
+            String s = data.getString(i);
+            Answer a = new Answer(title, s.split("\"")[0], s.split("\"")[1]);
+            array.add(a);
+        }
+        return array;
     }
+
+    public String getTitleMusic(int index, JSONArray data) throws JSONException {
+        return data.getString(index).split("\"")[0];
+    }
+
+    public JSONObject getAnimeInfosIndex(JSONArray array, int index) throws InterruptedException, JSONException {
+        JSONObject anime = array.getJSONObject(index);
+        //}
+        return anime;
+    }
+
+
 
     /*
      * getTitleJapanese return the Japanese style.

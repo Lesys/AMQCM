@@ -12,14 +12,18 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.example.projetembarque.controler.API;
 import com.example.projetembarque.modele.Answer;
 import com.example.projetembarque.R;
 import com.example.projetembarque.modele.CountDownTimerPerso;
+import com.example.projetembarque.modele.Player;
 import com.example.projetembarque.modele.Response;
 import com.example.projetembarque.modele.ResponseType;
 import com.example.projetembarque.modele.ResponseTypeAnime;
 import com.example.projetembarque.modele.ResponseTypeBand;
 import com.example.projetembarque.modele.ResponseTypeTitle;
+
+import net.sandrohc.jikan.model.anime.Anime;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -49,6 +53,14 @@ public class GameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
         GameActivity.initResponses();
+
+        //ArrayList<Integer> tab= API.getInstance().getListAnime( toi );
+
+        /*ArrayList<Anime> anime1 = API.getInstance().getAnswer( le numero de l'anime);
+        ArrayList<Anime> anime2 = API.getInstance().getAnswer(le numero de l'anime);
+        ArrayList<Anime> anime3 = API.getInstance().getAnswer(le numero de l'anime);
+        ArrayList<Anime> anime4 = API.getInstance().getAnswer(le numero de l'anime);
+*/
         this.numberMusicPlayed = 1;
         this.score = 0;
         this.updateValues();

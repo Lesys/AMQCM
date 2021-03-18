@@ -18,6 +18,8 @@ public class Player {
         this.loginMAL = loginMAL;
     }
 
+    public Player(){ }
+
     /**
      * Sends the id of the answer the Player choose
      * @param id    id of the answer the Player choose
@@ -25,6 +27,8 @@ public class Player {
     public void giveAnswer(int id) { //TODO : send the selected id to the response
 
     }
+
+    public String getUid(){ return uid; }
 
     public String getLoginMAL() {
         return loginMAL;
